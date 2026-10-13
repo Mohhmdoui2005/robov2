@@ -1,0 +1,39 @@
+---
+// Live telemetry ticker banner — infinite marquee
+const items = [
+  { text: 'REGISTRATION CLOSING SOON', cls: 'text-secondary-container font-bold' },
+  { text: '//', cls: 'text-tertiary/70 font-bold' },
+  { text: 'STATUS: REGISTRATION ACTIVE // DOHYO READY', cls: '' },
+  { text: '//', cls: 'text-tertiary/70 font-bold' },
+  { text: 'IEEE BRANCH CHAPTER NO. 04921', cls: '' },
+  { text: '//', cls: 'text-tertiary/70 font-bold' },
+  { text: 'PRIZES: VALUABLE PRIZES FOR THE WINNERS', cls: 'text-primary-container font-bold' },
+  { text: '//', cls: 'text-tertiary/70 font-bold' },
+  { text: 'TELEMETRY FEED: 5.8GHZ ENCRYPTED', cls: '' },
+  { text: '//', cls: 'text-tertiary/70 font-bold' },
+  { text: 'SCRUTINEERING STATUS: STRICT COGNITIVE AUDIT', cls: 'text-secondary-fixed-dim' },
+  { text: '//', cls: 'text-tertiary/70 font-bold' },
+];
+---
+<aside class="w-full bg-surface-container-lowest border-b-2 border-surface-variant overflow-hidden z-50 py-1">
+  <div class="marquee flex items-center text-label-badge font-label-badge text-tertiary uppercase tracking-widest whitespace-nowrap px-margin">
+    <div class="flex items-center gap-space-sm pr-space-lg text-primary-container font-bold shrink-0 bg-surface-container-lowest relative z-10">
+      <span class="inline-block w-2.5 h-2.5 bg-primary-container animate-ping" aria-hidden="true"></span>
+      <span>[SYSTEM ACTIVE]</span>
+    </div>
+    <div class="relative flex-1 overflow-hidden">
+      <div class="marquee-track flex w-max items-center">
+        <div class="flex items-center gap-space-md pr-space-md">
+          {items.map((item) => (
+            <span class={item.cls}>{item.text}</span>
+          ))}
+        </div>
+        <div class="flex items-center gap-space-md pr-space-md" aria-hidden="true">
+          {items.map((item) => (
+            <span class={item.cls}>{item.text}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</aside>

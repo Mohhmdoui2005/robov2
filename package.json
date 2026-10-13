@@ -1,0 +1,23 @@
+{
+  "name": "roboko-v2",
+  "version": "1.0.0",
+  "description": "BUSHIDO BOT: Clash of the Steel Samurai - IEEE Mechatronics Sumo Robotics",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.13.5",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.6.3"
+  }
+}

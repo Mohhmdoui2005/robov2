@@ -1,0 +1,29 @@
+---
+// Technical scrutineering FAQ
+const faqs = [
+  { icon: 'help', q: 'What occurs if a robot fails the 5.000s countdown?', a: 'Any intentional or accidental motion (wheel spin, arm trigger, optical emitter firing) observed by the referees before exactly 5.000 seconds have elapsed results in an immediate false-start warning. A second infraction forfeits the bout.' },
+  { icon: 'qr_code_2', q: 'Are electromagnets allowed in the Standard Class?', a: 'No. Only permanent NdFeB (Neodymium) magnets are permitted. Active variable electromagnetic coils are strictly banned due to current limit safety regulations and magnetic coil pulse interference.' },
+  { icon: 'build', q: 'Can we alter our front wedge blade between bouts?', a: 'Modular wedge blades are allowed provided the robot is re-checked through the official volumetric inspection gate box before entering the Dohyo staging paddock. Weight cannot deviate from the weigh-in log.' },
+  { icon: 'memory', q: 'What happens if optical edge sensors become blinded?', a: 'Robots that exit the ring autonomously due to sensor degradation or white border glare are considered ring-out (Yuhkoh awarded to opponent). We strongly advise dual IR + line scan sensor redundancy.' },
+];
+---
+<section class="py-space-xl bg-surface-container-lowest border-b-2 border-surface-variant" id="telemetry">
+  <div class="w-full max-w-7xl mx-auto px-margin">
+    <div class="mb-space-xl border-b-2 border-surface-variant pb-space-md">
+      <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg uppercase text-on-surface mt-space-xs">
+        SCRUTINEERING PROTOCOLS // 審査規約
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+      {faqs.map((f) => (
+        <div class="bg-surface-container border-2 border-surface-variant p-space-md">
+          <h3 class="text-headline-sm font-headline-sm text-secondary-container uppercase mb-2 flex items-center gap-2">
+            <span class="material-symbols-outlined">{f.icon}</span>
+            {f.q}
+          </h3>
+          <p class="text-body-sm font-body-sm text-tertiary">{f.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

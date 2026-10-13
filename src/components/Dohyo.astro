@@ -1,0 +1,92 @@
+---
+// The sacred dohyo — battle arena specifications
+const specs = [
+  ['Ring Diameter & Core', '154.0 cm (±1.0 cm) • 25.0 mm Matte Black High-Density MDF'],
+  ['Surface Coating', 'Polyurethane non-reflective seal (Non-magnetic substrate)'],
+  ['Tawara Border (White Line)', '5.0 cm width, polyurethane white coat'],
+  ['Starting Lines (Shikiri-sen)', '2.0 x 20.0 cm, 10.0 cm apart from center'],
+  ['Ring Elevation', '5.0 cm off floor level with empty fall zone'],
+  ['Fall-Out Demarcation', '100.0 cm perimeter soft foam cushion'],
+];
+---
+<section class="py-space-2xl bg-surface-container-lowest border-b-2 border-surface-variant grid-blueprint" id="dohyo-specs">
+  <div class="w-full max-w-7xl mx-auto px-margin">
+    <div class="flex items-center justify-between mb-space-lg">
+      <div>
+        <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg uppercase text-on-surface mt-space-xs">
+          THE DOHYO ARENA SPECS // 土俵
+        </h2>
+      </div>
+      <div class="hidden md:block text-right">
+        <span class="text-headline-md font-headline-md text-tertiary font-bold">1540 MM Ø</span>
+        <span class="text-label-stamp font-label-stamp text-tertiary block font-mono">MATTE MDF WOOD // THICKNESS: 25.0 MM</span>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+      <div class="lg:col-span-6 bg-surface-container border-2 border-surface-variant p-space-lg shadow-hard-red relative">
+        <div class="flex justify-between items-center border-b border-surface-variant pb-2 mb-space-md">
+          <span class="text-label-stamp font-label-stamp text-on-surface uppercase">ENGINEERING TOP-VIEW PROJECTION</span>
+          <span class="text-label-badge font-label-badge text-secondary-container">[TOLERANCE: ±1.0 MM]</span>
+        </div>
+        <div class="relative w-full aspect-square flex items-center justify-center bg-surface-dim border border-surface-variant p-4" role="img" aria-label="Top-view engineering diagram of the 154 centimeter dohyo ring with shikiri starting lines and tawara border callouts">
+          <div class="w-full h-full rounded-full border-8 border-white bg-black flex items-center justify-center relative shadow-inner">
+            <div class="absolute inset-0 rounded-full border-4 border-dashed border-red-500 opacity-60"></div>
+            <div class="flex flex-col gap-6 items-center justify-center">
+              <div class="w-20 h-2 bg-primary-container border border-white"></div>
+              <div class="text-label-badge font-label-badge text-tertiary uppercase tracking-widest text-[10px]">100MM GAP</div>
+              <div class="w-20 h-2 bg-primary-container border border-white"></div>
+            </div>
+            <div class="absolute top-2 text-[10px] font-mono text-tertiary">0° [NORTH AXIS]</div>
+            <div class="absolute bottom-2 text-[10px] font-mono text-tertiary">180° [SOUTH AXIS]</div>
+            <div class="absolute left-2 text-[10px] font-mono text-tertiary">270° [WEST]</div>
+            <div class="absolute right-2 text-[10px] font-mono text-tertiary">90° [EAST]</div>
+          </div>
+          <div class="absolute top-6 left-6 bg-surface-container-high border border-white px-2 py-1 text-[11px] font-mono text-on-surface shadow-hard-black">
+            TAWARA BORDER: 50MM WHITE
+          </div>
+          <div class="absolute bottom-6 right-6 bg-surface-container-high border border-primary-container px-2 py-1 text-[11px] font-mono text-primary-container shadow-hard-black">SURFACE: MATTE COATED MDF WOOD</div>
+        </div>
+        <div class="mt-space-md flex justify-between text-label-badge font-label-badge text-tertiary">
+          <span>COEFF. OF FRICTION: μ = 0.62</span>
+          <span>RING HEIGHT OFF DECK: 50.0 MM</span>
+        </div>
+      </div>
+      <div class="lg:col-span-6 space-y-space-md">
+        <div class="bg-surface-container border-2 border-surface-variant p-space-md">
+          <h4 class="text-headline-sm font-headline-sm text-on-surface uppercase mb-space-xs flex items-center gap-2">
+            <span class="w-2 h-4 bg-primary-container inline-block"></span>
+            RING SURFACE CRITERIA &amp; FIDELITY
+          </h4>
+          <p class="text-body-sm font-body-sm text-tertiary mb-space-md">
+            Constructed according to International Sumo Robot Rules (All-Japan / IEEE Chapter standard). Dohyo is fabricated from high-density matte MDF wood with non-reflective polyurethane coating; non-magnetic surface calibrated for silicone/rubber tire traction.
+          </p>
+          <table class="w-full text-left font-code-telemetry text-code-telemetry tabular-nums">
+            <tbody>
+              {specs.map(([k, v]) => (
+                <tr class="border-b border-surface-variant">
+                  <td class="py-2 text-tertiary font-bold pr-4">{k}</td>
+                  <td class="py-2 text-on-surface">{v}</td>
+                </tr>
+              ))}
+              <tr>
+                <td class="py-2 text-tertiary font-bold pr-4">Optical Reflection Spec</td>
+                <td class="py-2 text-primary-container">Matte Black: ≤ 8% • White Border: ≥ 88%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="bg-surface-container-high border-2 border-secondary-container p-space-md flex items-start gap-space-md shadow-hard-black">
+          <span class="material-symbols-outlined text-secondary-container text-2xl">warning</span>
+          <div>
+            <span class="text-label-stamp font-label-stamp text-secondary-container block uppercase">
+              CRITICAL NOTICE: NON-MAGNETIC MDF SURFACE SPECIFICATION
+            </span>
+            <p class="text-body-sm font-body-sm text-tertiary mt-1">
+              The Dohyo arena is precision-machined from High-Density MDF wood. Magnetic downforce does not adhere to MDF; bouts rely entirely on mechanical downforce, chassis kinematics, and high-traction rubber/silicone tire friction (calibrated μ = 0.62).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

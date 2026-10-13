@@ -1,0 +1,29 @@
+---
+// Registration steps — 100% free participation
+const steps = [
+  { n: '01', step: 'STEP 01 // SUBMIT', title: 'Fill Application Form', body: 'Provide team identifier, lead engineer contact credentials, bot codename, and design verification against the V3.2 Classification Book.', footer: 'ENROLLMENT STAGE', border: 'border-surface-variant', shadow: 'shadow-hard-black', num: 'text-primary-container', foot: 'text-tertiary' },
+  { n: '02', step: 'STEP 02 // AUDIT', title: 'IEEE Technical Review', body: 'Our technical arbiters review robot architecture, autonomous failsafe readiness, and magnetic pull compliance specifications.', footer: 'SCRUTINEERING STAGE', border: 'border-primary-container', shadow: 'shadow-hard-red', num: 'text-secondary-container', foot: 'text-primary-container' },
+  { n: '03', step: 'STEP 03 // DISPATCH', title: 'Confirmation Email', body: 'Receive your official paddock invitation, pit bench allocation number, and scrutineering check-in badge directly via email.', footer: 'ACCEPTED TEAMS CONFIRMATION', border: 'border-surface-variant', shadow: 'shadow-hard-black', num: 'text-on-surface', foot: 'text-secondary-container' },
+];
+---
+<section class="py-space-2xl bg-surface border-b-2 border-surface-variant" id="register">
+  <div class="w-full max-w-7xl mx-auto px-margin">
+    <div class="max-w-3xl mb-space-xl">
+      <h2 class="text-headline-lg-mobile md:text-headline-xl font-headline-xl uppercase text-on-surface mt-space-xs">100% FREE PARTICIPATION &amp; ADMISSION</h2>
+      <p class="text-body-lg font-body-lg text-tertiary mt-space-sm">No registration charges or spectator fees. Every qualified robotics squad receives full paddock workbench access, scrutineering certification, and arena bout slots free of charge.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg mb-space-xl">
+      {steps.map((s) => (
+        <div class={`bg-surface-container-low border-2 ${s.border} p-space-lg flex flex-col justify-between ${s.shadow} relative`}>
+          <div class={`text-headline-xl font-headline-xl ${s.num} font-bold leading-none mb-2`}>{s.n}</div>
+          <div>
+            <div class="text-label-stamp font-label-stamp text-secondary-container font-mono mb-1">{s.step}</div>
+            <h3 class="text-headline-sm font-headline-sm uppercase text-on-surface font-bold mb-space-sm">{s.title}</h3>
+            <p class="text-body-sm font-body-sm text-tertiary">{s.body}</p>
+          </div>
+          <div class={`mt-space-md pt-2 border-t border-surface-variant text-label-badge font-label-badge ${s.foot}`}>{s.footer}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
