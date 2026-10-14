@@ -1,4 +1,4 @@
-/* Hallmark · audit-fix · macrostructure: retained (in-place fixes, no re-pick) · contrast: fixed (40-41) · nav: brutal-slab voice · footer: Ft2 inline · slop: re-check 42-49 after fix */
+/* Hallmark · theme: light washi/ink/vermilion (full re-theme, same tokens) · contrast: re-check 40-41 after swap · nav: brutal-slab voice · footer: Ft2 inline */
 /* Hallmark · pre-emit critique: P4 H4 E4 S5 R3 V5 */
 @tailwind base;
 @tailwind components;
@@ -6,13 +6,13 @@
 
 :root {
   --color-hazard: #ffc703;
-  --color-abyss: #0e0e0e;
-  --color-accent: #ff5541;
-  --color-accent-ink: #0e0e0e;
-  --color-focus: #ffc703;
+  --color-abyss: #241c11;
+  --color-accent: #a53410;
+  --color-accent-ink: #fbf4e6;
+  --color-focus: #7c2408;
   --color-blossom: #ffb4a8;
-  --color-line-veil: rgba(53, 53, 52, 0.35);
-  --color-accent-veil: rgba(255, 85, 65, 0.3);
+  --color-line-veil: rgba(74, 63, 45, 0.3);
+  --color-accent-veil: rgba(165, 52, 16, 0.28);
 }
 
 /* Neo-Brutalist Hazard Pattern & Structural Blueprint Lines */
@@ -87,14 +87,26 @@ button:focus-visible {
 }
 .petal {
   position: absolute;
-  top: -8%;
+  top: 0;
   animation-name: petal-fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
 }
 @keyframes petal-fall {
+  from {
+    transform: translateY(-15cqh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
   to {
-    top: 104%;
+    transform: translateY(115cqh);
+    opacity: 0;
   }
 }
 .petal-inner {
@@ -133,6 +145,25 @@ button:focus-visible {
 .marquee:focus-within .marquee-track {
   animation-play-state: paused;
 }
+
+/* Floating shrink header — full bar at top, centered pill after scroll */
+#site-header .nav-shell {
+  transition: max-width 0.35s ease-out, height 0.35s ease-out, margin 0.35s ease-out, border-radius 0.35s ease-out, border-width 0.35s ease-out, box-shadow 0.35s ease-out;
+}
+#site-header.scrolled .nav-shell {
+  width: calc(100% - 1.5rem);
+  max-width: 56rem;
+  margin: 0.75rem auto 0;
+  height: 3.5rem;
+  border: 2px solid var(--color-abyss);
+  border-radius: 9999px;
+  box-shadow: 4px 4px 0 var(--color-abyss);
+}
+#site-header.scrolled .header-strip,
+#site-header.scrolled .nav-cta-secondary,
+#site-header.scrolled .nav-link-extra {
+  display: none;
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -142,6 +173,9 @@ button:focus-visible {
   .petal,
   .petal-inner {
     animation: none !important;
+  }
+  .petal {
+    opacity: 0 !important;
   }
   *,
   *::before,

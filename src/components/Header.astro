@@ -1,27 +1,33 @@
 ---
-// Top nav bar
+// Top nav bar — full bar at page top, floating pill after scroll
 ---
-<header class="bg-surface-dim border-b-2 border-surface-variant sticky top-0 z-40">
-  <div class="w-full max-w-7xl mx-auto px-margin flex items-center justify-between h-20">
+<header id="site-header" class="sticky top-0 z-40">
+  <div class="nav-shell w-full max-w-7xl mx-auto px-margin flex items-center justify-between h-16 bg-surface-dim border-b-2 border-surface-variant">
     <a class="text-headline-sm font-headline-sm font-bold uppercase tracking-widest text-on-surface flex items-center gap-2 group" href="#">
-      <span class="bg-primary-container text-surface-container-lowest px-2 py-1 text-label-stamp font-label-stamp border border-surface-variant">IEEE</span>
-      <span class="tracking-tighter">ROBOKO // ROBO-KO</span>
+      <span class="bg-primary-container text-accent-ink px-2 py-1 text-label-stamp font-label-stamp border border-surface-variant">IEEE</span>
+      <span class="tracking-tighter normal-case">Roboko</span>
     </a>
     <nav aria-label="Primary Navigation" class="hidden md:flex items-center gap-space-lg">
-      <a class="whitespace-nowrap text-tertiary font-code-telemetry text-code-telemetry hover:text-on-surface transition-none" href="#classification-book">Classification Book</a>
-      <a class="whitespace-nowrap text-primary font-code-telemetry text-code-telemetry font-bold border-b-2 border-primary pb-1" href="#dohyo-specs">Dohyo Specs</a>
-      <a class="whitespace-nowrap text-tertiary font-code-telemetry text-code-telemetry hover:text-on-surface transition-none" href="#bushido-code">Robo-KO Code</a>
-      <a class="whitespace-nowrap text-tertiary font-code-telemetry text-code-telemetry hover:text-on-surface transition-none" href="#schedule">Schedule</a>
-      <a class="whitespace-nowrap text-tertiary font-code-telemetry text-code-telemetry hover:text-on-surface transition-none" href="#telemetry">Telemetry</a>
+      <a class="whitespace-nowrap text-tertiary font-code-telemetry text-code-telemetry uppercase tracking-wider hover:text-on-surface transition-none" href="#classification-book">Classification Book</a>
+      <a class="whitespace-nowrap text-tertiary font-code-telemetry text-code-telemetry uppercase tracking-wider hover:text-on-surface transition-none" href="#arena-specs">Arena Specs</a>
+      <a class="whitespace-nowrap text-tertiary font-code-telemetry text-code-telemetry uppercase tracking-wider hover:text-on-surface transition-none" href="#bushido-code">Robo-KO Code</a>
+      <a class="nav-link-extra whitespace-nowrap text-tertiary font-code-telemetry text-code-telemetry uppercase tracking-wider hover:text-on-surface transition-none" href="#schedule">Schedule</a>
+      <a class="nav-link-extra whitespace-nowrap text-tertiary font-code-telemetry text-code-telemetry uppercase tracking-wider hover:text-on-surface transition-none" href="#telemetry">Telemetry</a>
     </nav>
     <div class="flex items-center gap-space-md">
-      <a class="hidden lg:inline-flex whitespace-nowrap items-center text-label-stamp font-label-stamp border-2 border-surface-variant px-space-md py-2 text-on-surface hover:border-primary-container hover:text-primary-container shadow-hard-black transition-none btn-brutal" href="#rulebook">
+      <a class="nav-cta-secondary hidden lg:inline-flex whitespace-nowrap items-center text-label-stamp font-label-stamp border-2 border-surface-variant px-space-md py-2 text-on-surface hover:border-primary-container hover:text-primary-container shadow-hard-black transition-none btn-brutal" href="#rulebook">
         RULEBOOK V3.2
       </a>
-      <a class="inline-flex whitespace-nowrap items-center text-label-stamp font-label-stamp bg-primary-container text-surface-container-lowest border-2 border-white px-space-md py-2 uppercase shadow-hard-black hover:bg-on-primary-container hover:text-white transition-none btn-brutal" href="#register">
-        <span class="mr-1.5 font-bold">[ 闘 ]</span> REGISTER SQUAD
+      <a class="inline-flex whitespace-nowrap items-center text-label-stamp font-label-stamp bg-primary-container text-accent-ink border-2 border-on-surface px-space-md py-2 uppercase shadow-hard-black hover:bg-on-primary-container hover:text-accent-ink transition-none btn-brutal" href="#register">
+        <span class="font-bold sm:mr-1.5">[ 闘 ]</span><span class="hidden sm:inline"> REGISTER SQUAD</span>
       </a>
     </div>
   </div>
-  <div class="h-1 w-full hazard-stripe" aria-hidden="true"></div>
+  <div class="header-strip h-1 w-full hazard-stripe" aria-hidden="true"></div>
 </header>
+<script>
+  const header = document.getElementById('site-header');
+  const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 24);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>

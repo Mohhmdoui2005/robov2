@@ -3,9 +3,7 @@
 const principles = [
   { kanji: '義', romaji: 'GI // RECTITUDE', title: 'Zero Jamming', body: 'Strictly non-destructive combat. Strobe blinding lights, radio signal jammers, chemical adhesives, and liquids will trigger immediate dishonorable expulsion.', rule: 'RULEBOOK SEC 2.1', accent: 'text-primary-container' },
   { kanji: '勇', romaji: 'YU // COURAGE', title: 'Active Engage', body: 'Robots must actively engage opponents. Stalling, excessive defensive perimeter circling, or passive waiting beyond 10 seconds invokes a referee penalty.', rule: 'RULEBOOK SEC 5.4', accent: 'text-on-surface' },
-  { kanji: '仁', romaji: 'JIN // BENEVOLENCE', title: 'Emergency Kill', body: 'Every chassis must have an exposed, physical hardware kill-switch or wireless e-stop accessible without entering the active combat perimeter.', rule: 'RULEBOOK SEC 3.8', accent: 'text-secondary-container' },
   { kanji: '礼', romaji: 'REI // RESPECT', title: '5.00s Countdown', body: 'Upon start signal trigger, all movement is frozen until 5.000 seconds elapse. A false start of 4.999s incurs an immediate round forfeit.', rule: 'RULEBOOK SEC 6.2', accent: 'text-on-surface' },
-  { kanji: '誠', romaji: 'MAKOTO // HONESTY', title: 'Firmware Audit', body: 'Grand Finals competitors must provide their source code repository for verification by IEEE technical arbiters to ensure zero external human telemetry cues.', rule: 'RULEBOOK SEC 8.1', accent: 'text-primary-container' },
 ];
 ---
 <section class="py-space-xl bg-surface border-b-2 border-surface-variant" id="bushido-code">
@@ -19,7 +17,7 @@ const principles = [
         Sumo robotics is not merely an exercise in raw wattage; it is an unyielding demonstration of respect for fellow engineers, mechanical honor, and absolute autonomous integrity.
       </p>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-md">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
       {principles.map((p) => (
         <div class="bg-surface-container-low border-2 border-surface-variant p-space-md flex flex-col justify-between shadow-hard-black hover:border-primary-container transition-none">
           <div>

@@ -1,5 +1,5 @@
 ---
-// The sacred dohyo — battle arena specifications
+// The sacred arena — battle arena specifications
 const specs = [
   ['Ring Diameter & Core', '154.0 cm (±1.0 cm) • 25.0 mm Matte Black High-Density MDF'],
   ['Surface Coating', 'Polyurethane non-reflective seal (Non-magnetic substrate)'],
@@ -9,12 +9,12 @@ const specs = [
   ['Fall-Out Demarcation', '100.0 cm perimeter soft foam cushion'],
 ];
 ---
-<section class="py-space-2xl bg-surface-container-lowest border-b-2 border-surface-variant grid-blueprint" id="dohyo-specs">
+<section class="py-space-2xl bg-surface-container-lowest border-b-2 border-surface-variant grid-blueprint" id="arena-specs">
   <div class="w-full max-w-7xl mx-auto px-margin">
     <div class="flex items-center justify-between mb-space-lg">
       <div>
         <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg uppercase text-on-surface mt-space-xs">
-          THE DOHYO ARENA SPECS // 土俵
+          THE ARENA SPECS // 土俵
         </h2>
       </div>
       <div class="hidden md:block text-right">
@@ -28,20 +28,20 @@ const specs = [
           <span class="text-label-stamp font-label-stamp text-on-surface uppercase">ENGINEERING TOP-VIEW PROJECTION</span>
           <span class="text-label-badge font-label-badge text-secondary-container">[TOLERANCE: ±1.0 MM]</span>
         </div>
-        <div class="relative w-full aspect-square flex items-center justify-center bg-surface-dim border border-surface-variant p-4" role="img" aria-label="Top-view engineering diagram of the 154 centimeter dohyo ring with shikiri starting lines and tawara border callouts">
+        <div class="relative w-full aspect-square flex items-center justify-center bg-surface-dim border border-surface-variant p-4" role="img" aria-label="Top-view engineering diagram of the 154 centimeter arena ring with shikiri starting lines and tawara border callouts">
           <div class="w-full h-full rounded-full border-8 border-white bg-black flex items-center justify-center relative shadow-inner">
             <div class="absolute inset-0 rounded-full border-4 border-dashed border-red-500 opacity-60"></div>
             <div class="flex flex-col gap-6 items-center justify-center">
               <div class="w-20 h-2 bg-primary-container border border-white"></div>
-              <div class="text-label-badge font-label-badge text-tertiary uppercase tracking-widest text-[10px]">100MM GAP</div>
+              <div class="text-label-badge font-label-badge text-tertiary-fixed uppercase tracking-widest">100MM GAP</div>
               <div class="w-20 h-2 bg-primary-container border border-white"></div>
             </div>
-            <div class="absolute top-2 text-[10px] font-mono text-tertiary">0° [NORTH AXIS]</div>
-            <div class="absolute bottom-2 text-[10px] font-mono text-tertiary">180° [SOUTH AXIS]</div>
-            <div class="absolute left-2 text-[10px] font-mono text-tertiary">270° [WEST]</div>
-            <div class="absolute right-2 text-[10px] font-mono text-tertiary">90° [EAST]</div>
+            <div class="absolute top-2 font-mono text-label-badge text-tertiary-fixed">0° [NORTH AXIS]</div>
+            <div class="absolute bottom-2 font-mono text-label-badge text-tertiary-fixed">180° [SOUTH AXIS]</div>
+            <div class="absolute left-2 font-mono text-label-badge text-tertiary-fixed">270° [WEST]</div>
+            <div class="absolute right-2 font-mono text-label-badge text-tertiary-fixed">90° [EAST]</div>
           </div>
-          <div class="absolute top-6 left-6 bg-surface-container-high border border-white px-2 py-1 text-[11px] font-mono text-on-surface shadow-hard-black">
+          <div class="absolute top-6 left-6 bg-surface-container-high border border-outline px-2 py-1 text-[11px] font-mono text-on-surface shadow-hard-black">
             TAWARA BORDER: 50MM WHITE
           </div>
           <div class="absolute bottom-6 right-6 bg-surface-container-high border border-primary-container px-2 py-1 text-[11px] font-mono text-primary-container shadow-hard-black">SURFACE: MATTE COATED MDF WOOD</div>
@@ -58,7 +58,7 @@ const specs = [
             RING SURFACE CRITERIA &amp; FIDELITY
           </h4>
           <p class="text-body-sm font-body-sm text-tertiary mb-space-md">
-            Constructed according to International Sumo Robot Rules (All-Japan / IEEE Chapter standard). Dohyo is fabricated from high-density matte MDF wood with non-reflective polyurethane coating; non-magnetic surface calibrated for silicone/rubber tire traction.
+            Constructed according to International Sumo Robot Rules (All-Japan / IEEE Chapter standard). The arena is fabricated from high-density matte MDF wood with non-reflective polyurethane coating; non-magnetic surface calibrated for silicone/rubber tire traction.
           </p>
           <table class="w-full text-left font-code-telemetry text-code-telemetry tabular-nums">
             <tbody>
@@ -82,7 +82,7 @@ const specs = [
               CRITICAL NOTICE: NON-MAGNETIC MDF SURFACE SPECIFICATION
             </span>
             <p class="text-body-sm font-body-sm text-tertiary mt-1">
-              The Dohyo arena is precision-machined from High-Density MDF wood. Magnetic downforce does not adhere to MDF; bouts rely entirely on mechanical downforce, chassis kinematics, and high-traction rubber/silicone tire friction (calibrated μ = 0.62).
+              The arena is precision-machined from High-Density MDF wood. Magnetic downforce does not adhere to MDF; bouts rely entirely on mechanical downforce, chassis kinematics, and high-traction rubber/silicone tire friction (calibrated μ = 0.62).
             </p>
           </div>
         </div>

@@ -5,15 +5,16 @@ interface Props {
   title?: string;
 }
 
-const { title = 'BUSHIDO BOT: Clash of the Steel Samurai // 武士道ロボット [IEEE MECHATRONICS]' } = Astro.props;
+const { title = 'ROBOKO: Clash of the Steel Samurai // 武士道ロボット [IEEE MECHATRONICS]' } = Astro.props;
 ---
 
 <!doctype html>
-<html class="dark" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta
       name="description"
       content="IEEE Mechatronics & Robotics Chapter presents the premier autonomous Sumo Robotics tournament. Steel on steel. Zero retreat."
@@ -30,7 +31,7 @@ const { title = 'BUSHIDO BOT: Clash of the Steel Samurai // 武士道ロボッ�
     />
   </head>
   <body
-    class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-surface-container-lowest font-body-md text-body-md"
+    class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-accent-ink font-body-md text-body-md"
   >
     <slot />
   </body>

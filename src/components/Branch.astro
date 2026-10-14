@@ -1,0 +1,46 @@
+---
+// Organizer — IEEE ENP student branch (El Harrach, Algiers)
+const facts = [
+  ['CHAPTER', 'IEEE ENP STUDENT BRANCH'],
+  ['SCHOOL', 'ECOLE NATIONALE POLYTECHNIQUE — EL HARRACH, ALGIERS'],
+  ['NETWORK', 'PART OF THE INTERNATIONAL IEEE ORGANIZATION'],
+  ['ESTABLISHED', '2019'],
+  ['FIELDS', 'EVENTS · ACTIVITIES · WORKSHOPS ACROSS VARIOUS DOMAINS'],
+  ['EDITION', 'ROBOKO III — 3RD EDITION'],
+];
+---
+<section class="py-space-2xl bg-surface border-b-2 border-surface-variant" id="organizer">
+  <div class="w-full max-w-7xl mx-auto px-margin">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-space-md mb-space-md">
+          <div class="w-16 h-16 shrink-0 bg-primary-container border-2 border-on-surface shadow-hard-black flex items-center justify-center">
+            <span class="text-accent-ink font-bold text-headline-md font-headline-md leading-none">支部</span>
+          </div>
+          <span class="text-label-stamp font-label-stamp text-secondary-container uppercase tracking-wider">ORGANIZED BY THE HOST BRANCH</span>
+        </div>
+        <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg uppercase text-on-surface">
+          THE STUDENT BRANCH
+        </h2>
+        <p class="text-body-lg font-body-lg text-tertiary mt-space-sm">
+          Roboko is organized by the IEEE student branch of ENP — the Ecole Nationale Polytechnique in El Harrach, Algiers — part of the international IEEE organization.
+        </p>
+        <p class="text-body-md font-body-md text-tertiary mt-space-sm">
+          Founded in 2019, the branch runs events, activities, and workshops across various domains. The tournament returns for its 3rd edition.
+        </p>
+      </div>
+      <div class="lg:col-span-7 bg-surface-container border-2 border-surface-variant p-space-md shadow-hard-black">
+        <div class="flex items-center justify-between border-b-2 border-surface-variant pb-space-sm mb-space-sm">
+          <span class="text-label-stamp font-label-stamp text-on-surface uppercase">BRANCH LEDGER // 台帳</span>
+          <span class="text-label-badge font-label-badge text-secondary-container">VERIFIED RECORD</span>
+        </div>
+        {facts.map(([k, v]) => (
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 border-b border-surface-variant py-space-sm last:border-b-0">
+            <span class="text-label-badge font-label-badge text-tertiary font-bold shrink-0">{k}</span>
+            <span class="text-body-sm font-body-sm text-on-surface font-bold sm:text-right">{v}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
