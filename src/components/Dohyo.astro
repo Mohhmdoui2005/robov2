@@ -6,7 +6,6 @@ const specs = [
   ['Tawara Border (White Line)', '5.0 cm width, polyurethane white coat'],
   ['Starting Lines (Shikiri-sen)', '2.0 x 20.0 cm, 10.0 cm apart from center'],
   ['Ring Elevation', '5.0 cm off floor level with empty fall zone'],
-  ['Fall-Out Demarcation', '100.0 cm perimeter soft foam cushion'],
 ];
 ---
 <section class="hidden md:block py-space-2xl bg-surface-container-lowest border-b-2 border-surface-variant grid-blueprint" id="arena-specs">
@@ -62,29 +61,14 @@ const specs = [
           </p>
           <table class="w-full text-left font-code-telemetry text-code-telemetry tabular-nums">
             <tbody>
-              {specs.map(([k, v]) => (
-                <tr class="border-b border-surface-variant">
+              {specs.map(([k, v], i) => (
+                <tr class={`border-b border-surface-variant ${i === specs.length - 1 ? 'border-b-0' : ''}`}>
                   <td class="py-2 text-tertiary font-bold pr-4">{k}</td>
                   <td class="py-2 text-on-surface">{v}</td>
                 </tr>
               ))}
-              <tr>
-                <td class="py-2 text-tertiary font-bold pr-4">Optical Reflection Spec</td>
-                <td class="py-2 text-primary-container">Matte Black: ≤ 8% • White Border: ≥ 88%</td>
-              </tr>
             </tbody>
           </table>
-        </div>
-        <div class="bg-surface-container-high border-2 border-secondary-container p-space-md flex items-start gap-space-md shadow-hard-black">
-          <span class="material-symbols-outlined text-secondary-container text-2xl">warning</span>
-          <div>
-            <span class="text-label-stamp font-label-stamp text-secondary-container block uppercase">
-              CRITICAL NOTICE: NON-MAGNETIC MDF SURFACE SPECIFICATION
-            </span>
-            <p class="text-body-sm font-body-sm text-tertiary mt-1">
-              The arena is precision-machined from High-Density MDF wood. Magnetic downforce does not adhere to MDF; bouts rely entirely on mechanical downforce, chassis kinematics, and high-traction rubber/silicone tire friction (calibrated μ = 0.62).
-            </p>
-          </div>
         </div>
       </div>
     </div>
