@@ -2,7 +2,7 @@
 
 Official event landing page for **ROBOKO III**, the autonomous sumo robotics tournament organized by the **IEEE Student Branch at École Nationale Polytechnique (ENP), El Harrach, Algiers**.
 
-The site is a single-page, statically generated marketing and information hub for competitors and spectators — covering divisions, arena specifications, the tournament rulebook, schedule, registration steps, organizer details, and scrutineering FAQs.
+The site is a single-page, statically generated marketing and information hub for competitors and spectators — covering the organizer (IEEE student branch), the V3-BETA specification book, arena specifications, the tournament stages, registration steps, and scrutineering FAQs.
 
 > Steel on steel. Zero retreat. The arena awaits.
 
@@ -29,6 +29,7 @@ No UI framework, no client-side router, no runtime backend. The final build is p
 - **Animated samurai hero** — CSS rising sun, torii gate, and falling sakura petals, all pure CSS (no canvas or libraries).
 - **Live telemetry marquee** — infinite scrolling ticker that pauses on hover/focus.
 - **Shrinking floating header** — full-width bar at the top that collapses into a centered pill on scroll.
+- **Vertical timeline** — the four championship stages (homologation → first phase → group phase → knockout bracket) rendered as a scannable rail.
 - **Fully responsive** layouts for mobile, tablet, and desktop.
 - **Accessibility-minded** — focus-visible outlines, ARIA labels on decorative diagrams, semantic sections, and full `prefers-reduced-motion` support that disables all animations.
 - **Zero external JS dependencies** at runtime.
@@ -85,13 +86,13 @@ roboko v2/
 │   │   ├── Ticker.astro        # Telemetry marquee banner
 │   │   ├── Header.astro        # Sticky nav with shrink-on-scroll behavior
 │   │   ├── Hero.astro          # Headline, CTAs, animated samurai panel
-│   │   ├── Classification.astro# Uniform division & spec book callout
-│   │   ├── Dohyo.astro         # Arena (dohyo) specs + top-view diagram
-│   │   ├── Bushido.astro       # Tournament ethics & regulations
-│   │   ├── Schedule.astro      # Four-stage championship timeline
-│   │   ├── Register.astro      # Free entry & three-step registration
 │   │   ├── Branch.astro        # Organizer / IEEE branch facts
+│   │   ├── Classification.astro # Specification book callout (V3-BETA)
+│   │   ├── Dohyo.astro         # Arena (dohyo) specs + top-view diagram
+│   │   ├── Schedule.astro      # Four-stage championship timeline
+│   │   ├── Register.astro      # Registrations & three-step enrollment
 │   │   ├── Faq.astro           # Scrutineering protocols
+│   │   ├── Bushido.astro        # Tournament ethics & regulations (bundled, not on page)
 │   │   └── Footer.astro        # Links, credits, hazard strip
 │   ├── layouts/
 │   │   └── Layout.astro        # HTML shell, meta tags, fonts
@@ -149,14 +150,13 @@ CSS custom properties in `global.css` (`--color-hazard`, `--color-abyss`, `--col
 
 Most page copy is data-driven and easy to update from the frontmatter of each component:
 
-- **Divisions / spec book** → `src/components/Classification.astro`
+- **Ticker messages** → `items` array in `Ticker.astro`
+- **Organizer facts** → `facts` array in `Branch.astro`
+- **Beta spec book callout** → `Classification.astro`
 - **Arena dimensions and tolerances** → `specs` array in `Dohyo.astro`
-- **Rules and penalties** → `principles` array in `Bushido.astro`
 - **Tournament stages** → `phases` array in `Schedule.astro`
 - **Registration steps** → `steps` array in `Register.astro`
 - **FAQ entries** → `faqs` array in `Faq.astro`
-- **Ticker messages** → `items` array in `Ticker.astro`
-- **Organizer facts** → `facts` array in `Branch.astro`
 - **Global title/meta description** → `src/layouts/Layout.astro`
 
 To re-theme the site, edit the color values in `tailwind.config.mjs`; the token names are stable, so component classes do not need to change.
@@ -189,4 +189,8 @@ No server-side runtime or environment variables are required.
 
 Organized by the **IEEE Student Branch, École Nationale Polytechnique (ENP)** — El Harrach, Algiers. Part of the international IEEE network.
 
-© 2026 IEEE Student Branch — Mechatronics & Robotics Chapter. All rights reserved.
+© 2026 IEEE Student Branch. The specification book (V3) is currently in **beta** — its contents are under review and may change before the final release.
+
+---
+
+All rights reserved.
