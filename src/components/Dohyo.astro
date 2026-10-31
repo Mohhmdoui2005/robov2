@@ -18,7 +18,7 @@ const specs = [
       </div>
       <div class="hidden md:block text-right">
         <span class="text-headline-md font-headline-md text-tertiary font-bold">1540 MM Ø</span>
-        <span class="text-label-stamp font-label-stamp text-tertiary block font-mono">MATTE MDF WOOD // THICKNESS: 25.0 MM</span>
+        <span class="text-label-stamp font-label-stamp text-tertiary block font-code-telemetry">MATTE MDF WOOD // THICKNESS: 25.0 MM</span>
       </div>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
@@ -27,26 +27,25 @@ const specs = [
           <span class="text-label-stamp font-label-stamp text-on-surface uppercase">ENGINEERING TOP-VIEW PROJECTION</span>
           <span class="text-label-badge font-label-badge text-secondary-container">[TOLERANCE: ±1.0 MM]</span>
         </div>
-        <div class="relative w-full aspect-square flex items-center justify-center bg-surface-dim border border-surface-variant p-4" role="img" aria-label="Top-view engineering diagram of the 154 centimeter arena ring with shikiri starting lines and tawara border callouts">
-          <div class="w-full h-full rounded-full border-8 border-white bg-black flex items-center justify-center relative shadow-inner">
-            <div class="absolute inset-0 rounded-full border-4 border-dashed border-red-500 opacity-60"></div>
+        <div class="relative w-full aspect-square flex items-center justify-center bg-surface-dim" role="img" aria-label="Top-view engineering diagram of the 154 centimeter arena ring with shikiri starting lines and tawara border callouts">
+          <div class="w-full h-full rounded-full border-8 border-accent-ink bg-[var(--color-abyss)] flex items-center justify-center relative shadow-inner">
+            <div class="absolute inset-0 rounded-full border-4 border-dashed border-primary-container opacity-60"></div>
             <div class="flex flex-col gap-6 items-center justify-center">
-              <div class="w-20 h-2 bg-primary-container border border-white"></div>
+              <div class="w-20 h-2 bg-primary-container border border-accent-ink"></div>
               <div class="text-label-badge font-label-badge text-tertiary-fixed uppercase tracking-widest">100MM GAP</div>
-              <div class="w-20 h-2 bg-primary-container border border-white"></div>
+              <div class="w-20 h-2 bg-primary-container border border-accent-ink"></div>
             </div>
-            <div class="absolute top-2 font-mono text-label-badge text-tertiary-fixed">0° [NORTH AXIS]</div>
-            <div class="absolute bottom-2 font-mono text-label-badge text-tertiary-fixed">180° [SOUTH AXIS]</div>
-            <div class="absolute left-2 font-mono text-label-badge text-tertiary-fixed">270° [WEST]</div>
-            <div class="absolute right-2 font-mono text-label-badge text-tertiary-fixed">90° [EAST]</div>
+            <div class="absolute top-2 font-code-telemetry text-label-badge text-tertiary-fixed">0° [NORTH AXIS]</div>
+            <div class="absolute bottom-2 font-code-telemetry text-label-badge text-tertiary-fixed">180° [SOUTH AXIS]</div>
+            <div class="absolute left-2 font-code-telemetry text-label-badge text-tertiary-fixed">270° [WEST]</div>
+            <div class="absolute right-2 font-code-telemetry text-label-badge text-tertiary-fixed">90° [EAST]</div>
           </div>
-          <div class="absolute top-6 left-6 bg-surface-container-high border border-outline px-2 py-1 text-[11px] font-mono text-on-surface shadow-hard-black">
+          <div class="absolute top-6 left-6 bg-surface-container-high border border-outline px-2 py-1 text-label-badge font-label-badge text-on-surface shadow-hard-black">
             TAWARA BORDER: 50MM WHITE
           </div>
-          <div class="absolute bottom-6 right-6 bg-surface-container-high border border-primary-container px-2 py-1 text-[11px] font-mono text-primary-container shadow-hard-black">SURFACE: MATTE COATED MDF WOOD</div>
+          <div class="absolute bottom-6 right-6 bg-surface-container-high border border-primary-container px-2 py-1 text-label-badge font-label-badge text-primary-container shadow-hard-black">SURFACE: MATTE COATED MDF WOOD</div>
         </div>
         <div class="mt-space-md flex justify-between text-label-badge font-label-badge text-tertiary">
-          <span>COEFF. OF FRICTION: μ = 0.62</span>
           <span>RING HEIGHT OFF DECK: 50.0 MM</span>
         </div>
       </div>
@@ -56,9 +55,6 @@ const specs = [
             <span class="w-2 h-4 bg-primary-container inline-block"></span>
             RING SURFACE CRITERIA &amp; FIDELITY
           </h4>
-          <p class="text-body-sm font-body-sm text-tertiary mb-space-md">
-            Constructed according to International Sumo Robot Rules (All-Japan / IEEE Chapter standard). The arena is fabricated from high-density matte MDF wood with non-reflective polyurethane coating; non-magnetic surface calibrated for silicone/rubber tire traction.
-          </p>
           <table class="w-full text-left font-code-telemetry text-code-telemetry tabular-nums">
             <tbody>
               {specs.map(([k, v], i) => (

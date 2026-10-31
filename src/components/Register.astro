@@ -6,7 +6,7 @@ const steps = [
   { n: '03', step: 'STEP 03 // DISPATCH', title: 'Confirmation Email', body: 'Receive your official paddock invitation, pit bench allocation number, and scrutineering check-in badge directly via email.', footer: 'ACCEPTED TEAMS CONFIRMATION', border: 'border-surface-variant', shadow: 'shadow-hard-black', num: 'text-on-surface', foot: 'text-secondary-container' },
 ];
 ---
-<section class="py-space-2xl bg-surface border-b-2 border-surface-variant" id="register">
+<section class="py-space-xl bg-surface border-b-2 border-surface-variant" id="register">
   <div class="w-full max-w-7xl mx-auto px-margin">
     <div class="max-w-3xl mb-space-xl">
       <h2 class="text-headline-lg-mobile md:text-headline-xl font-headline-xl uppercase text-on-surface mt-space-xs">REGISTRATION IS OPEN</h2>
@@ -17,7 +17,7 @@ const steps = [
         <div class={`bg-surface-container-low border-2 ${s.border} p-space-lg flex flex-col justify-between ${s.shadow} ${i === 1 ? '' : 'md:translate-y-6'} relative`}>
           <div class={`text-headline-xl font-headline-xl ${s.num} font-bold leading-none mb-2`}>{s.n}</div>
           <div>
-            <div class="text-label-stamp font-label-stamp text-secondary-container font-mono mb-1">{s.step}</div>
+            <div class="text-label-stamp font-label-stamp text-secondary-container font-code-telemetry mb-1">{s.step}</div>
             <h3 class="text-headline-sm font-headline-sm uppercase text-on-surface font-bold mb-space-sm">{s.title}</h3>
             <p class="text-body-sm font-body-sm text-tertiary">{s.body}</p>
           </div>
@@ -30,8 +30,8 @@ const steps = [
         <span class="text-label-badge font-label-badge text-primary-container block mb-1">ENTRY ACCEPTED // PIT BENCH ON CONFIRMATION</span>
         <p class="text-headline-sm font-headline-sm uppercase text-on-surface font-bold">Paddock benches are assigned with your confirmation email.</p>
       </div>
-      <a class="btn-brutal whitespace-nowrap w-full sm:w-auto justify-center bg-primary-container text-accent-ink font-headline-sm text-headline-sm md:text-headline-md md:font-headline-md px-space-2xl py-space-md border-2 border-on-surface uppercase shadow-hard-black hover:bg-on-primary-container hover:text-accent-ink transition-none text-center" href="#classification-book">
-        REGISTER YOUR SQUAD
+      <a class="btn-brutal whitespace-nowrap w-full sm:w-auto justify-center bg-primary-container text-accent-ink font-headline-sm text-headline-sm md:text-headline-md md:font-headline-md px-space-2xl py-space-md border-2 border-on-surface uppercase shadow-hard-black hover:bg-on-primary-container hover:text-accent-ink transition-none text-center" href="#organizer">
+        CONTACT THE HOST BRANCH
       </a>
     </div>
   </div>

@@ -1,27 +1,27 @@
 ---
 // Technical scrutineering FAQ
 const faqs = [
-  { icon: 'help', q: 'How does a Sumo Robot battle work?', a: 'Two robots compete in a ring, aiming to push their opponent out while staying inside the boundaries.' },
-  { icon: 'memory', q: 'What type of robots are allowed?', a: 'Robots must comply with RoboKO\u2019s technical specifications, dimensions, and competition rules.' },
-  { icon: 'groups', q: 'Is the competition individual or team-based?', a: 'Participants can compete in teams, according to the competition\u2019s registration guidelines.' },
-  { icon: 'timer', q: 'How long does each robot battle last?', a: 'Each battle follows the competition\u2019s official timing rules, with robots competing to outmaneuver and push their opponents out of the ring.' },
+  { icon: 'groups', q: 'Is the competition individual or team-based?', a: 'Teams can range from 1 to 4 members. All team members must be registered during the application process.' },
+  { icon: 'sports_martial_arts', q: 'How does a match work?', a: 'Matches consist of a short mini-game followed by three rounds. The main goal is to push the opponent out of the ring without causing damage.' },
+  { icon: 'memory', q: 'What type of robots are allowed?', a: 'Robots must be 100% autonomous and fit within the weight and dimension limits defined in the rulebook. Remote control and destructive weapons are strictly prohibited.' },
+  { icon: 'circle', q: 'What are the rules regarding the ring surface?', a: 'The ring has a matte black surface designed not to reflect light. Robots are strictly forbidden from damaging, scratching, or leaving sticky residue on the ring.' },
 ];
 ---
-<section class="py-space-xl bg-surface-container-lowest border-b-2 border-surface-variant" id="telemetry">
+<section class="py-space-lg bg-surface-container-lowest" id="telemetry">
   <div class="w-full max-w-7xl mx-auto px-margin">
-    <div class="mb-space-xl border-b-2 border-surface-variant pb-space-md">
+    <div class="max-w-2xl mb-space-lg border-b-2 border-surface-variant pb-space-md">
       <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg uppercase text-on-surface mt-space-xs">
         SCRUTINEERING PROTOCOLS // 審査規約
       </h2>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+    <div>
       {faqs.map((f) => (
-        <div class="bg-surface-container border-2 border-surface-variant p-space-md">
-          <h3 class="text-headline-sm font-headline-sm text-secondary-container uppercase mb-2 flex items-center gap-2">
-            <span class="material-symbols-outlined">{f.icon}</span>
+        <div class="grid md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] gap-x-space-lg gap-y-1 py-space-md border-b border-surface-variant last:border-b-0">
+          <h3 class="text-headline-sm font-headline-sm text-secondary-container uppercase flex items-start gap-2 [overflow-wrap:anywhere]">
+            <span class="material-symbols-outlined shrink-0">{f.icon}</span>
             {f.q}
           </h3>
-          <p class="text-body-sm font-body-sm text-tertiary">{f.a}</p>
+          <p class="text-body-sm font-body-sm text-tertiary self-start">{f.a}</p>
         </div>
       ))}
     </div>

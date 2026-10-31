@@ -1,10 +1,10 @@
 ---
 // Tournament schedule & bracket timeline
 const phases = [
-  { phase: 'STAGE 01 // HOMOLOGATION', title: 'Homologation', body: 'Volumetric box fit check, tare weight measurement, blade edge radius inspection, and autonomous failsafe verification. Only homologated robots enter the bout draw.', status: 'STATUS: [MANDATORY GATEWAY]', border: 'border-surface-variant', shadow: 'shadow-hard-black', label: 'text-primary-container' },
-  { phase: 'STAGE 02 // FIRST PHASE', title: 'First Phase', body: 'Opening round of the championship. Robots face off in their first pool bouts to secure early Yuhkoh points and build momentum toward the group stage.', status: 'STATUS: [SIMULTANEOUS RINGS A/B]', border: 'border-surface-variant', shadow: 'shadow-hard-black', label: 'text-secondary-container' },
-  { phase: 'STAGE 03 // GROUP PHASE', title: 'Group Phase', body: 'Point-based round-robin pools. Best 2 out of 3 bouts, Yuhkoh points decide the table. The top robots from each pool advance to the knockout stage.', status: 'STATUS: [POOL STANDINGS]', border: 'border-surface-variant', shadow: 'shadow-hard-black', label: 'text-secondary-container' },
-  { phase: 'STAGE 04 // KNOCKOUT PHASE', title: 'Knockout Phase', body: 'Single elimination bracket. 3-minute pit windows between bouts for battery swaps, tyre cleaning, and calibration adjustments. The last robot standing takes the Roboko Katana Trophy and IEEE Laurels.', status: 'STATUS: [ELIMINATION BRACKET]', border: 'border-primary-container', shadow: 'shadow-hard-red', label: 'text-primary-container' },
+  { phase: 'STAGE 01 // HOMOLOGATION', title: 'Homologation', body: 'Size perimeter check, weight verification, and autonomous failsafe check. Only homologated robots are authorized to compete.', status: 'STATUS: [MANDATORY GATEWAY]', last: false, label: 'text-primary-container' },
+  { phase: 'STAGE 02 // FIRST PHASE', title: 'First Phase', body: 'Opening round of the championship. Robots face off in matches earning points to secure a spot for the 2nd phase.', status: 'STATUS: [MATCH POINTS]', last: false, label: 'text-secondary-container' },
+  { phase: 'STAGE 03 // GROUP PHASE', title: 'Group Phase', body: 'Teams compete in five balanced groups of three, with the top performers advancing to the final knockout phase.', status: 'STATUS: [5 GROUPS OF 3]', last: false, label: 'text-secondary-container' },
+  { phase: 'STAGE 04 // KNOCKOUT BRACKET', title: 'Knockout Bracket', body: 'The 8 qualifying teams enter a single-elimination bracket (quarter-finals, semi-finals, and final) to determine the champion.', status: 'STATUS: [8 TEAMS ELIMINATION]', last: true, label: 'text-primary-container' },
 ];
 ---
 <section class="py-space-2xl bg-surface-container-lowest border-b-2 border-surface-variant" id="schedule">
@@ -17,17 +17,18 @@ const phases = [
       </div>
       <div class="mt-space-sm md:mt-0 font-code-telemetry text-code-telemetry text-secondary-container">OFFICIAL TOURNAMENT STAGES &amp; BOUT CADENCE</div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-space-lg relative">
+    <ol class="relative max-w-3xl ml-2 border-l-2 border-surface-variant pl-space-lg space-y-space-lg">
       {phases.map((p) => (
-        <div class={`bg-surface-container border-2 ${p.border} p-space-md ${p.shadow} relative`}>
-          <div class={`text-label-badge font-label-badge ${p.label} uppercase mb-1`}>{p.phase}</div>
-          <h3 class="text-headline-sm font-headline-sm uppercase text-on-surface font-bold mb-space-sm">{p.title}</h3>
-          <p class="text-body-sm font-body-sm text-tertiary mb-space-md">{p.body}</p>
-          <div class={`bg-surface-container-lowest border border-surface-variant p-2 text-label-badge font-label-badge ${p.label}`}>
-            {p.status}
+        <li class="relative">
+          <span class={`absolute -left-[1.875rem] top-1 w-3.5 h-3.5 border-2 border-on-surface shadow-hard-black ${p.last ? 'bg-primary-container' : 'bg-surface-container-lowest'}`} aria-hidden="true"></span>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-space-md">
+            <span class={`text-label-badge font-label-badge uppercase ${p.label}`}>{p.phase}</span>
+            <span class="text-label-badge font-label-badge text-tertiary">{p.status}</span>
           </div>
-        </div>
+          <h3 class={`text-headline-md font-headline-md uppercase text-on-surface font-bold ${p.last ? 'text-primary-container' : ''} mt-1`}>{p.title}</h3>
+          <p class="text-body-md font-body-md text-tertiary mt-space-xs max-w-xl">{p.body}</p>
+        </li>
       ))}
-    </div>
+    </ol>
   </div>
 </section>
